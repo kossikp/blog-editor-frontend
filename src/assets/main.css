@@ -1,35 +1,63 @@
-@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+@layer base {
+  html, body {
+    @apply h-full;
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
   }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  
+  .btn-primary {
+    @apply bg-indigo-600 text-white hover:bg-indigo-700;
   }
-}
+  
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 text-gray-700 hover:bg-gray-50;
+  }
+  
+  .input {
+    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+  }
+  
+  .label {
+    @apply block font-medium text-sm text-gray-700;
+  }
+  
+  .error {
+    @apply text-red-500 text-xs mt-1;
+  }
+  
+  .help {
+    @apply text-gray-500 text-xs mt-1;
+  }
+  
+  .card {
+    @apply bg-white overflow-hidden shadow-sm sm:rounded-lg;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 bg-white border-b border-gray-200;
+  }
+  
+  .card-body {
+    @apply p-6 bg-white;
+  }
+  
+  .card-footer {
+    @apply px-6 py-4 bg-white border-t border-gray-200;
+  }
+} 
